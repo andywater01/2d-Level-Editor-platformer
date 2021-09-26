@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public GameObject player;
     private float speed;
     private float jumpForce;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     private bool isDead = false;
 
     public GameObject YouDied;
@@ -99,9 +99,10 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        isGrounded = true;
+        if (collision.gameObject.tag == ("Ground"))
+            isGrounded = true;
 
     }
 
