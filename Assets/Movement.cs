@@ -52,6 +52,7 @@ public class Movement : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             }
         }
+        
 
 
         if (GetisDead() == true)
